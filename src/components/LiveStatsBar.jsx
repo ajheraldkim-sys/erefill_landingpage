@@ -12,8 +12,8 @@ export default function LiveStatsBar() {
     },
     {
       icon: Users,
-      value: "2 Dedicated Experiences",
-      label: "Station Owner & Customer workflows",
+      value: "3 Dedicated Roles",
+      label: "Station Owner, Customer & Rider flows",
       accent: "text-brand bg-brand-50 border-brand-200"
     },
     {

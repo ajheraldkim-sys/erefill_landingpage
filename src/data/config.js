@@ -6,11 +6,7 @@
 export const EREFILL_CONFIG = {
   appName: "eRefill",
   tagline: "A Smart Order and Inventory Manager for Water Refilling Stations & Customers",
-  version: "v1.0.0",
-  buildNumber: "1",
-  fileSize: "100.1 MB",
-  rawFileSizeBytes: 104982158,
-  releaseDate: "September 24, 2026",
+  releaseDate: "October 15, 2026",
   minAndroid: "Android 8.0 (Oreo) or higher",
   targetPlatform: "Android (ARM64 & ARMv7)",
   fileFormat: "APK (Package Installer)",
@@ -18,6 +14,7 @@ export const EREFILL_CONFIG = {
   downloadUrl: "/downloads/erefill.apk",
   fileName: "erefill.apk",
   checksum: "SHA-256 Verified Official Build",
+  sha256: "48b13834d469c894fdcb0e5e8571442e21cda47df1d613955f7753fa43fd5db4",
   supportEmail: "support@erefill.app",
 };
 
@@ -26,7 +23,7 @@ export const KEY_FEATURES = [
     id: "orders",
     title: "Smart Order Management",
     shortDesc: "Organize walk-in, phone, and customer app orders in a unified real-time queue from placement to doorstep.",
-    category: "Operations",
+    category: "Station Operations",
     iconName: "ClipboardList",
     badge: "Real-time Sync",
     bullet: "Atomic status tracking prevents missed refills."
@@ -35,7 +32,7 @@ export const KEY_FEATURES = [
     id: "inventory",
     title: "Water & Empty Gallon Inventory",
     shortDesc: "Track Slim and Round 5-gallon containers accurately. Know units in-station, with clients, or in sanitization.",
-    category: "Asset Control",
+    category: "Station Operations",
     iconName: "Droplets",
     badge: "Slim & Round",
     bullet: "Eliminate lost jugs and container shortages."
@@ -44,7 +41,7 @@ export const KEY_FEATURES = [
     id: "debt",
     title: "Customer Debt / Utang Tracking",
     shortDesc: "Maintain a transparent digital ledger for customer credit balances and partial payments online & offline.",
-    category: "Finance",
+    category: "Station Operations",
     iconName: "Receipt",
     badge: "Credit Ledger",
     bullet: "Complete transparency for customer balances."
@@ -53,7 +50,7 @@ export const KEY_FEATURES = [
     id: "customer_portal",
     title: "Doorstep Customer Ordering",
     shortDesc: "Customers order purified, alkaline, or mineral water in seconds with live delivery progress updates.",
-    category: "Customer App",
+    category: "Customer Experience",
     iconName: "ShoppingCart",
     badge: "Easy Ordering",
     bullet: "Browse nearby stations and schedule refills."
@@ -62,7 +59,7 @@ export const KEY_FEATURES = [
     id: "payments",
     title: "Digital Payments & GCash",
     shortDesc: "Integrated PayMongo checkout supporting GCash, Maya, cards, as well as Cash on Delivery.",
-    category: "Checkout",
+    category: "Customer Experience",
     iconName: "CreditCard",
     badge: "GCash & Maya",
     bullet: "Instant cashless payments or Cash on Delivery."
@@ -71,37 +68,64 @@ export const KEY_FEATURES = [
     id: "delivery_tracking",
     title: "Interactive Delivery Tracking",
     shortDesc: "Track delivery progress on OpenStreetMap with accurate drop-off pins and estimated arrival times.",
-    category: "Logistics",
+    category: "Logistics & Fleet",
     iconName: "MapPin",
     badge: "OpenStreetMap",
     bullet: "Clear address pins and delivery progress."
   },
   {
+    id: "fleet",
+    title: "Rider Fleet & Dispatch",
+    shortDesc: "Assign water deliveries to station riders with turn-by-turn route previews and offline drop-off logging.",
+    category: "Logistics & Fleet",
+    iconName: "Truck",
+    badge: "Fleet Dispatch",
+    bullet: "Optimized route sequences for faster drop-offs."
+  },
+  {
+    id: "chat",
+    title: "Real-time In-App Messaging",
+    shortDesc: "Direct chat between customer, station staff, and rider with photo sharing and order context.",
+    category: "Customer Experience",
+    iconName: "MessageSquare",
+    badge: "Live Chat",
+    bullet: "Instant updates on gate codes and jug returns."
+  },
+  {
+    id: "subscriptions",
+    title: "Routine Scheduled Refills",
+    shortDesc: "Set automated recurring weekly or bi-weekly refill schedules so households never run dry.",
+    category: "Customer Experience",
+    iconName: "Calendar",
+    badge: "Auto-Refill",
+    bullet: "Hands-free hydration for homes and offices."
+  },
+  {
     id: "analytics",
     title: "Station Sales & Volume Reports",
     shortDesc: "Track daily revenue summaries, gallon dispense counters, and sales trends without manual paperwork.",
-    category: "Business Insights",
+    category: "Station Operations",
     iconName: "BarChart3",
     badge: "Daily Analytics",
     bullet: "Automated daily sales & revenue reports."
   },
   {
-    id: "sync",
-    title: "Online Cloud Synchronization",
-    shortDesc: "Powered by Supabase Realtime, data synchronizes instantly between station owners and customer screens.",
-    category: "Cloud",
-    iconName: "RefreshCw",
-    badge: "Instant Sync",
-    bullet: "Live updates across all devices."
+    id: "loyalty",
+    title: "Customer Loyalty Rewards",
+    shortDesc: "Reward repeat customers with loyalty points automatically converted into discounted refills.",
+    category: "Customer Experience",
+    iconName: "Sparkles",
+    badge: "Rewards",
+    bullet: "Boost customer retention and repeat orders."
   },
   {
     id: "offline",
     title: "Offline SQLite Reliability",
-    shortDesc: "Built-in local SQLite database ensures station owners can record orders, inventory, and utang during internet dropouts.",
-    category: "Reliability",
+    shortDesc: "Built-in local SQLite database ensures station owners and riders record orders and stock during signal deadzones.",
+    category: "Logistics & Fleet",
     iconName: "Database",
     badge: "SQLite Offline",
-    bullet: "Zero data loss with auto-sync."
+    bullet: "Zero data loss with auto-sync on reconnect."
   }
 ];
 
@@ -110,25 +134,33 @@ export const WORKFLOW_STEPS = [
     step: 1,
     title: "Order",
     tagline: "Customers place water refills in seconds",
-    description: "Customers select their preferred water type (Purified, Alkaline, Mineral), container type, and address. Station staff can also quickly log walk-in customers.",
+    description: "Customers choose purified, alkaline, or mineral water, specify Slim or Round containers, and enter address. Station staff can also quickly log walk-in orders.",
     metric: "< 30 sec",
     metricLabel: "Average ordering time"
   },
   {
     step: 2,
-    title: "Manage",
-    tagline: "Station owners oversee dispensing & inventory",
-    description: "Owners monitor live gallon inventory, track Slim and Round jugs, review customer debt (utang) balances, and dispatch water deliveries with one tap.",
+    title: "Dispense & Inventory",
+    tagline: "Live queue routing and gallon tracking",
+    description: "Orders appear in real time. Station staff sanitize containers, dispense water, and container stock counters update automatically.",
     metric: "100% Live",
     metricLabel: "Inventory visibility"
   },
   {
     step: 3,
-    title: "Deliver",
-    tagline: "Water delivered right to customer doorstep",
-    description: "Customers receive real-time delivery updates, pay via GCash, Maya, or COD, and receive verified digital transaction receipts upon drop-off.",
+    title: "Dispatch & Deliver",
+    tagline: "Assigned riders navigate via OpenStreetMap",
+    description: "Station dispatches delivery to fleet riders. Customers track arrival in real-time with live map updates and estimated arrival times.",
     metric: "Real-time",
-    metricLabel: "Doorstep delivery tracking"
+    metricLabel: "GPS delivery tracking"
+  },
+  {
+    step: 4,
+    title: "Settle & Reorder",
+    tagline: "Cashless PayMongo, COD, and Utang ledger",
+    description: "Collect payments via GCash, Maya, or COD, log credits to the offline SQLite ledger, and reward customers with automatic loyalty points.",
+    metric: "Zero paper",
+    metricLabel: "Transparent transaction receipts"
   }
 ];
 
@@ -144,14 +176,14 @@ export const USER_ROLES = [
       "Real-time order queue for walk-ins, phone orders, and app orders",
       "Slim and Round 5-gallon container inventory tracker",
       "Customer credit (Utang) ledger with partial payment logging",
-      "Delivery dispatch and customer address mapping",
-      "Daily revenue calculations and gallon volume reports",
+      "Fleet rider assignment and delivery dispatch management",
+      "Real 7-day revenue calculations and gallon volume reports",
       "One-tap station availability toggle (Open / Closed)"
     ]
   },
   {
     id: "customer",
-    roleName: "Customer",
+    roleName: "Customer & Household",
     tagline: "Clean, fresh drinking water refills delivered directly to your doorstep",
     description: "A frictionless mobile experience for households and businesses to browse nearby stations, schedule refills, track drop-offs, and pay conveniently.",
     iconName: "Users",
@@ -159,10 +191,26 @@ export const USER_ROLES = [
     features: [
       "Discover verified water refilling stations in your area",
       "Select water types: Purified, Alkaline, or Mineral",
-      "Refill existing gallons or borrow station containers",
+      "Refill existing gallons, borrow, or purchase containers",
       "Flexible payments: PayMongo GCash, Maya, cards, or Cash on Delivery",
-      "Live order progress tracker with delivery arrival times",
-      "Order history and past transaction receipts"
+      "Live order progress tracker with OpenStreetMap delivery routing",
+      "Automated routine refill subscriptions & loyalty reward points"
+    ]
+  },
+  {
+    id: "rider",
+    roleName: "Delivery Rider & Fleet",
+    tagline: "Smooth delivery routing, offline drop-off logging, and empty jug returns",
+    description: "Dedicated mobile workflow for station delivery staff to view assigned orders, navigate to customer addresses, and confirm gallon collections.",
+    iconName: "Truck",
+    badge: "Fleet Logistics",
+    features: [
+      "Assigned order dispatch queue with sequential delivery stops",
+      "Turn-by-turn customer address navigation on OpenStreetMap",
+      "Direct in-app messaging and phone call shortcuts with customers",
+      "Empty 5-gallon container pickup logging and return receipts",
+      "Offline delivery sync queue during mobile network deadzones",
+      "Instant delivery proof and payment collection confirmation"
     ]
   }
 ];
@@ -239,17 +287,41 @@ export const APP_SCREENS = [
       "Direct chat and contact shortcuts with the water station",
       "Digital receipt upon doorstep completion"
     ]
+  },
+  {
+    id: "rider_view",
+    title: "Rider Dispatch & Navigation",
+    roleBadge: "Delivery Rider",
+    description: "Delivery riders view assigned orders, check customer drop-off instructions, and navigate seamlessly using integrated OpenStreetMap.",
+    highlights: [
+      "Sequential drop-off queue with customer phone shortcuts",
+      "Empty jug collection counter (Slim & Round)",
+      "Offline sync queue for remote areas with low connectivity",
+      "Instant payment collection status (Paid GCash vs COD)"
+    ]
+  },
+  {
+    id: "chat_system",
+    title: "In-App Realtime Chat",
+    roleBadge: "Customer & Station",
+    description: "Direct instant communication between customers and station dispatchers for precise delivery instructions, gate directions, or jug inquiries.",
+    highlights: [
+      "Real-time message synchronization via Supabase Realtime",
+      "Order context attached directly to the conversation",
+      "Chat history archiving and unread message indicators",
+      "Direct photo attachment support for drop-off verification"
+    ]
   }
 ];
 
 export const FAQS = [
   {
     question: "What is eRefill?",
-    answer: "eRefill is a dedicated mobile application designed specifically for water refilling station owners and customers. It provides a synchronized ecosystem to manage water orders, inventory of Slim and Round 5-gallon containers, customer debt (utang), OpenStreetMap deliveries, and digital payments."
+    answer: "eRefill is a dedicated mobile application designed specifically for water refilling stations, customers, and delivery riders. It provides a synchronized ecosystem to manage water orders, inventory of Slim and Round 5-gallon containers, customer debt (utang), OpenStreetMap deliveries, and digital payments."
   },
   {
     question: "Who can use eRefill?",
-    answer: "eRefill is purpose-built for two primary user groups: 1) Water Refilling Station Owners who need total operational control over orders, container assets, customer debts, and sales. 2) Customers who want a hassle-free way to order clean drinking water refills, track delivery, and pay digitally."
+    answer: "eRefill is purpose-built for three key roles: 1) Water Refilling Station Owners who need total operational control over orders, container assets, customer debts, and sales. 2) Customers who want a hassle-free way to order clean drinking water refills, track delivery, and pay digitally. 3) Delivery Riders who navigate dispatches, confirm jug drop-offs, and log empty container returns."
   },
   {
     question: "Is eRefill free to download and use?",
@@ -265,15 +337,15 @@ export const FAQS = [
   },
   {
     question: "Can eRefill work offline?",
-    answer: "Yes! eRefill features an offline-first architecture powered by local SQLite storage. Station owners can continue recording walk-ins, stock changes, and customer credit balances (utang) even when internet connectivity drops."
+    answer: "Yes! eRefill features an offline-first architecture powered by local SQLite storage. Station owners and riders can continue recording walk-ins, stock changes, deliveries, and customer credit balances (utang) even when internet connectivity drops."
   },
   {
     question: "How do I install the APK on my Android phone?",
-    answer: "Installation is simple and takes under 60 seconds: 1) Download the APK from this page. 2) Open the downloaded erefill.apk file from your notification tray or Downloads folder. 3) If prompted, tap Settings and allow 'Install unknown apps' for your browser or file manager. 4) Tap Install on the confirmation prompt. 5) Open eRefill and select your role as Station Owner or Customer!"
+    answer: "Installation is simple and takes under 60 seconds: 1) Download the APK from this page. 2) Open the downloaded erefill.apk file from your notification tray or Downloads folder. 3) If prompted, tap Settings and allow 'Install unknown apps' for your browser or file manager. 4) Tap Install on the confirmation prompt. 5) Open eRefill and select your role!"
   },
   {
     question: "Is my data synchronized when I reconnect to the internet?",
-    answer: "Yes! As soon as your device reconnects to Wi-Fi or cellular mobile data, eRefill's synchronization engine automatically transmits all queued local SQLite records—such as completed orders, customer debt logs, and inventory adjustments—to the Supabase cloud database, updating all screens instantly."
+    answer: "Yes! As soon as your device reconnects to Wi-Fi or cellular mobile data, eRefill's synchronization engine automatically transmits all queued local SQLite records—such as completed orders, customer debt logs, rider deliveries, and inventory adjustments—to the Supabase cloud database, updating all screens instantly."
   }
 ];
 
@@ -301,6 +373,6 @@ export const INSTALL_STEPS = [
   {
     step: 5,
     title: "Start Using eRefill",
-    desc: "Open eRefill, choose Station Owner or Customer, and start managing operations or ordering!"
+    desc: "Open eRefill, choose your role (Station Owner, Customer, or Rider), and start managing operations or ordering!"
   }
 ];

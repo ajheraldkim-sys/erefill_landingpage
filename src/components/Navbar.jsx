@@ -103,9 +103,6 @@ export default function Navbar({ onDownloadClick }) {
             >
               <Download className="w-4 h-4 animate-bounce" />
               <span>Download APK</span>
-              <span className="px-1.5 py-0.5 bg-white/20 rounded-md text-[10px] font-medium tracking-wide">
-                {EREFILL_CONFIG.version}
-              </span>
             </motion.a>
 
             {/* Mobile Menu Toggle Button */}
@@ -155,7 +152,7 @@ export default function Navbar({ onDownloadClick }) {
                   className="w-full py-3 rounded-xl bg-brand text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md shadow-brand/20"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Download eRefill APK ({EREFILL_CONFIG.version})</span>
+                  <span>Download eRefill APK</span>
                 </a>
               </div>
             </nav>

@@ -39,7 +39,7 @@ export default function App() {
   const handleDownloadClick = () => {
     triggerWaterConfetti();
     showToast(
-      `Downloading eRefill APK (${EREFILL_CONFIG.version}, ${EREFILL_CONFIG.fileSize}). Check your notification panel or Downloads folder.`,
+      "Downloading official eRefill APK. Check your notification panel or Downloads folder.",
       "Download Started"
     );
   };

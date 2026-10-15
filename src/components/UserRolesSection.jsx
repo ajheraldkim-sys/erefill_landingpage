@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Store, Users, Check, ArrowRight } from 'lucide-react';
+import { Store, Users, Truck, Check, ArrowRight } from 'lucide-react';
 import { USER_ROLES } from '../data/config';
 
 const roleIcons = {
   Store,
-  Users
+  Users,
+  Truck
 };
 
 export default function UserRolesSection({ onDownloadClick }) {
@@ -19,15 +20,15 @@ export default function UserRolesSection({ onDownloadClick }) {
             Ecosystem Roles
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-800 tracking-tight mb-4">
-            Tailored for Station Owners & Customers
+            Tailored for Station Owners, Customers & Riders
           </h2>
           <p className="text-base sm:text-lg text-slate-muted leading-relaxed">
-            eRefill provides dedicated, purpose-built interfaces designed specifically for water station operations and convenient doorstep refills.
+            eRefill provides dedicated, purpose-built interfaces designed specifically for station operations, doorstep ordering, and fleet logistics.
           </p>
         </div>
 
-        {/* 2 User Roles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* 3 User Roles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {USER_ROLES.map((role, index) => {
             const Icon = roleIcons[role.iconName] || Store;
             return (
@@ -37,7 +38,7 @@ export default function UserRolesSection({ onDownloadClick }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-subtle-card hover:shadow-card-hover transition-all flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/90 shadow-subtle-card hover:shadow-card-hover transition-all flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

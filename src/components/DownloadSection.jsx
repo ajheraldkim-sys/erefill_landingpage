@@ -31,8 +31,6 @@ export default function DownloadSection({ onDownloadClick, onOpenInstallModal, o
   };
 
   const specs = [
-    { label: "Latest Version", value: EREFILL_CONFIG.version, icon: Layers },
-    { label: "File Size", value: EREFILL_CONFIG.fileSize, icon: HardDrive },
     { label: "Release Date", value: EREFILL_CONFIG.releaseDate, icon: Calendar },
     { label: "Compatibility", value: EREFILL_CONFIG.minAndroid, icon: Smartphone },
     { label: "Platform", value: "Android (ARM64 & ARMv7)", icon: Smartphone },
@@ -82,7 +80,7 @@ export default function DownloadSection({ onDownloadClick, onOpenInstallModal, o
               <div className="text-left">
                 <div className="leading-tight">Download eRefill APK</div>
                 <div className="text-xs font-normal text-white/85">
-                  {EREFILL_CONFIG.version} • {EREFILL_CONFIG.fileSize} • Free
+                  Official Package • 100% Free Download
                 </div>
               </div>
             </motion.a>
@@ -98,7 +96,7 @@ export default function DownloadSection({ onDownloadClick, onOpenInstallModal, o
             <div className="text-xs font-extrabold uppercase tracking-wider text-slate-muted mb-4 text-center sm:text-left">
               Package Specifications
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {specs.map((s, idx) => (
                 <div key={idx} className="flex flex-col">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -109,6 +107,28 @@ export default function DownloadSection({ onDownloadClick, onOpenInstallModal, o
                   </span>
                 </div>
               ))}
+            </div>
+
+            {/* Verified Hash Row */}
+            <div className="mt-6 pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              <div className="flex items-center gap-2 overflow-hidden">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span className="font-bold text-navy-800 shrink-0">SHA-256 Checksum:</span>
+                <span className="font-mono text-[11px] text-slate-500 truncate select-all">{EREFILL_CONFIG.sha256}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  if (navigator.clipboard) {
+                    navigator.clipboard.writeText(EREFILL_CONFIG.sha256);
+                    onShowToast?.("SHA-256 checksum copied to clipboard!");
+                  }
+                }}
+                className="inline-flex items-center gap-1 font-bold text-brand hover:underline shrink-0 text-xs self-start sm:self-auto cursor-pointer"
+              >
+                <Copy className="w-3.5 h-3.5" />
+                <span>Copy Hash</span>
+              </button>
             </div>
           </div>
 

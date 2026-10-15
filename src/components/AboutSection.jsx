@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Store, Users, Check, ArrowRight } from 'lucide-react';
+import { Store, Users, Truck, Check, ArrowRight } from 'lucide-react';
 
 export default function AboutSection({ onDownloadClick }) {
   const audiences = [
@@ -18,7 +18,7 @@ export default function AboutSection({ onDownloadClick }) {
       ]
     },
     {
-      title: "Customers",
+      title: "Customers & Households",
       role: "Doorstep Ordering",
       icon: Users,
       badge: "Fast Ordering",
@@ -27,7 +27,20 @@ export default function AboutSection({ onDownloadClick }) {
         "Select purified, alkaline, or mineral", 
         "Live doorstep delivery tracking", 
         "GCash, Maya & COD payments",
-        "Saved addresses & 1-tap reorder"
+        "Routine scheduled refill plans"
+      ]
+    },
+    {
+      title: "Delivery Fleet & Riders",
+      role: "Logistics & Route",
+      icon: Truck,
+      badge: "Route & Dispatch",
+      description: "Equip delivery drivers with sequential drop-off queues, turn-by-turn map navigation, offline delivery logging, and empty 5-gallon jug return reconciliation.",
+      highlights: [
+        "Sequential stop navigation",
+        "Empty container return logs",
+        "Offline drop-off sync queue",
+        "Direct customer chat & calls"
       ]
     }
   ];
@@ -45,12 +58,12 @@ export default function AboutSection({ onDownloadClick }) {
             What is eRefill?
           </h2>
           <p className="text-base sm:text-lg text-slate-muted leading-relaxed">
-            eRefill is a purpose-built mobile application engineered specifically for the water refilling industry. It bridges station owners and customers into a synchronized platform—eliminating misplaced jugs, forgotten refills, and uncollected debts.
+            eRefill is a purpose-built mobile application engineered specifically for the water refilling industry. It bridges station owners, customers, and delivery riders into a synchronized platform—eliminating misplaced jugs, forgotten refills, and uncollected debts.
           </p>
         </div>
 
-        {/* 2 Audience Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* 3 Audience Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {audiences.map((aud, index) => {
             const Icon = aud.icon;
             return (

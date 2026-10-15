@@ -11,7 +11,11 @@ import {
   Download,
   Clock,
   PhoneCall,
-  Check
+  Check,
+  Truck,
+  MessageSquare,
+  Send,
+  Camera
 } from 'lucide-react';
 import { APP_SCREENS, EREFILL_CONFIG } from '../data/config';
 
@@ -27,6 +31,8 @@ export default function InteractiveAppShowcase({ onDownloadClick }) {
     { id: 'credits', label: 'Customer Utang Ledger', icon: FileText },
     { id: 'customer_order', label: 'Customer Ordering', icon: ShoppingCart },
     { id: 'customer_tracking', label: 'Live Delivery Tracker', icon: MapPin },
+    { id: 'rider_view', label: 'Rider Dispatch', icon: Truck },
+    { id: 'chat_system', label: 'In-App Live Chat', icon: MessageSquare },
   ];
 
   return (
@@ -395,13 +401,119 @@ export default function InteractiveAppShowcase({ onDownloadClick }) {
                         </div>
                       )}
 
+                      {/* Screen 7: Rider Dispatch & Navigation (Rider) */}
+                      {activeScreenId === 'rider_view' && (
+                        <div className="flex-1 flex flex-col">
+                          <div className="bg-brand text-white p-3.5 shadow-sm">
+                            <div className="flex justify-between items-center">
+                              <span className="font-extrabold text-sm">Delivery Stop 2 of 4</span>
+                              <span className="bg-emerald-400/30 text-emerald-100 border border-emerald-300/40 px-2 py-0.5 rounded text-[8px] font-bold">● Active Route</span>
+                            </div>
+                            <div className="text-[10px] text-white/80">Rider Marco • AquaPure Fleet</div>
+                          </div>
+
+                          <div className="flex-1 p-3 space-y-2.5 overflow-y-auto bg-slate-50">
+                            <div className="bg-white p-3 rounded-xl border border-slate-200">
+                              <div className="flex justify-between font-bold text-[10px]">
+                                <span className="text-navy-800">#ORD-1082 • Juan D.</span>
+                                <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-black text-[8px]">Paid GCash</span>
+                              </div>
+                              <div className="text-[9px] text-slate-muted mt-1">📍 Purok 3, Mabini St. (1.2 km away)</div>
+                              <div className="text-[9px] font-semibold text-navy-800 mt-0.5">📦 3x 5-gal Slim Alkaline</div>
+                              
+                              <div className="mt-2.5 flex gap-1.5">
+                                <button className="flex-1 py-1 bg-brand text-white font-bold rounded text-[8px] flex items-center justify-center gap-1">
+                                  <Navigation className="w-3 h-3" />
+                                  <span>Navigate Map</span>
+                                </button>
+                                <button className="py-1 px-2.5 bg-slate-100 text-navy-800 font-bold rounded text-[8px] flex items-center justify-center gap-1">
+                                  <PhoneCall className="w-3 h-3" />
+                                  <span>Call</span>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div className="bg-white p-2.5 rounded-xl border border-slate-200 space-y-1.5">
+                              <div className="text-[10px] font-bold text-navy-800">Empty Jug Collection</div>
+                              <div className="flex justify-between items-center text-[9px] bg-slate-50 p-2 rounded-lg">
+                                <span>Collected 3x Slim Jugs:</span>
+                                <span className="font-black text-brand bg-blue-50 px-2 py-0.5 rounded border border-blue-200">3 Verified</span>
+                              </div>
+                            </div>
+
+                            <button className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-[10px] shadow-sm flex items-center justify-center gap-1.5">
+                              <Check className="w-3.5 h-3.5" />
+                              <span>Complete Drop-off & Next Stop</span>
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Screen 8: In-App Realtime Chat (Customer & Station) */}
+                      {activeScreenId === 'chat_system' && (
+                        <div className="flex-1 flex flex-col">
+                          <div className="bg-brand text-white p-3.5 shadow-sm">
+                            <div className="flex items-center gap-2">
+                              <img 
+                                src="/assets/images/app-icon-192.png" 
+                                alt="eRefill" 
+                                className="w-6 h-6 rounded-md object-contain bg-white"
+                              />
+                              <div>
+                                <span className="font-extrabold text-xs block leading-tight">AquaPure Station Support</span>
+                                <span className="text-[8px] text-white/80">Ref: #ORD-1082 (Out for Delivery)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex-1 p-3 space-y-2 overflow-y-auto bg-slate-50 text-[9px]">
+                            {/* Customer Message */}
+                            <div className="flex flex-col items-end">
+                              <div className="bg-brand text-white p-2 rounded-xl rounded-tr-xs max-w-[85%] leading-tight">
+                                Good morning po! Please leave the 3 alkaline jugs by our front porch gate.
+                              </div>
+                              <span className="text-[7px] text-slate-400 mt-0.5">9:20 AM • Read</span>
+                            </div>
+
+                            {/* Station Dispatch Response */}
+                            <div className="flex flex-col items-start">
+                              <div className="bg-white border border-slate-200 text-navy-800 p-2 rounded-xl rounded-tl-xs max-w-[85%] leading-tight shadow-xs">
+                                Noted po Sir Juan! Rider Marco is on his way with your 3 Slim gallons, ETA is 8 minutes.
+                              </div>
+                              <span className="text-[7px] text-slate-400 mt-0.5">9:22 AM</span>
+                            </div>
+
+                            {/* Rider Note */}
+                            <div className="flex flex-col items-start">
+                              <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 p-2 rounded-xl rounded-tl-xs max-w-[85%] leading-tight">
+                                Rider Marco: Hello po! I've arrived at your gate with the refill jugs.
+                              </div>
+                              <span className="text-[7px] text-slate-400 mt-0.5">9:28 AM</span>
+                            </div>
+                          </div>
+
+                          {/* Chat Input Bar */}
+                          <div className="bg-white border-t border-slate-200 p-2 flex items-center gap-1.5">
+                            <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+                              <Camera className="w-3 h-3" />
+                            </div>
+                            <div className="flex-1 bg-slate-100 rounded-lg px-2 py-1 text-[8px] text-slate-400">
+                              Type a message...
+                            </div>
+                            <div className="w-6 h-6 rounded-full bg-brand text-white flex items-center justify-center">
+                              <Send className="w-3 h-3" />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
                     </motion.div>
                   </AnimatePresence>
 
                   {/* App Bottom Navigation bar */}
                   <div className="bg-white border-t border-slate-200/90 px-4 py-2 flex justify-around text-[9px] text-slate-muted">
                     <span className="text-brand font-bold">● Active View</span>
-                    <span>v{EREFILL_CONFIG.version}</span>
+                    <span>Official Build</span>
                   </div>
 
                 </div>
@@ -445,7 +557,7 @@ export default function InteractiveAppShowcase({ onDownloadClick }) {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-brand hover:bg-brand-dark text-white font-bold text-sm shadow-md shadow-brand/20 transition-all"
             >
               <Download className="w-4 h-4" />
-              <span>Download App to Test Live ({EREFILL_CONFIG.version})</span>
+              <span>Download App to Test Live</span>
             </motion.a>
           </div>
 

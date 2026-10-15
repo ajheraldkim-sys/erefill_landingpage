@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, LayoutDashboard, Truck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ShoppingCart, LayoutDashboard, Truck, Receipt, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { WORKFLOW_STEPS } from '../data/config';
 
-const stepIcons = [ShoppingCart, LayoutDashboard, Truck];
+const stepIcons = [ShoppingCart, LayoutDashboard, Truck, Receipt];
 
 export default function HowItWorksSection() {
   return (
@@ -19,23 +19,23 @@ export default function HowItWorksSection() {
             How eRefill Works
           </h2>
           <p className="text-base sm:text-lg text-slate-muted leading-relaxed">
-            Three simple steps to coordinate clean water orders from placement to final doorstep handoff.
+            Four seamless steps to coordinate clean water orders from placement to doorstep handoff and digital payment reconciliation.
           </p>
         </div>
 
-        {/* 3 Step Connected Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        {/* 4 Step Connected Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
           
           {WORKFLOW_STEPS.map((step, index) => {
-            const Icon = stepIcons[index];
+            const Icon = stepIcons[index] || CheckCircle2;
             return (
               <motion.div
                 key={step.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-subtle-card hover:shadow-card-hover transition-all flex flex-col justify-between relative group"
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-subtle-card hover:shadow-card-hover transition-all flex flex-col justify-between relative group"
               >
                 <div>
                   {/* Step Number Top Badge */}

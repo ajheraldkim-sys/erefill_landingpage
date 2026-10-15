@@ -22,7 +22,7 @@ export default function FinalCtaSection({ onDownloadClick }) {
         </h2>
 
         <p className="text-base sm:text-lg text-white/85 leading-relaxed max-w-2xl mx-auto mb-10">
-          Join station owners and customers across the region. Track your water and empty gallon inventory or order refills with total peace of mind.
+          Join station owners, households, and delivery riders across the region. Track gallon inventory, dispatch orders, or request doorstep water refills with total peace of mind.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -36,9 +36,6 @@ export default function FinalCtaSection({ onDownloadClick }) {
           >
             <Download className="w-5 h-5 text-brand" />
             <span>Download eRefill APK</span>
-            <span className="px-2 py-0.5 rounded-md bg-blue-50 text-brand text-xs font-bold">
-              {EREFILL_CONFIG.version}
-            </span>
           </motion.a>
         </div>
 
@@ -50,7 +47,7 @@ export default function FinalCtaSection({ onDownloadClick }) {
           <span className="opacity-40">•</span>
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4" />
-            <span>Verified Official Build ({EREFILL_CONFIG.fileSize})</span>
+            <span>Verified Official Build</span>
           </div>
         </div>
 

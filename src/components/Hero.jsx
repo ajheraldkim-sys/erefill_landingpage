@@ -44,7 +44,7 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
               </span>
-              <span>Official Release • Android APK {EREFILL_CONFIG.version}</span>
+              <span>Official Release • Android APK</span>
               <span className="w-1 h-1 rounded-full bg-brand-300"></span>
               <span className="text-slate-muted font-normal">Free Download</span>
             </motion.div>
@@ -68,7 +68,7 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
 
             {/* Supporting Description */}
             <p className="text-base sm:text-lg text-slate-muted leading-relaxed max-w-2xl mb-8">
-              eRefill connects water refilling stations and customers seamlessly. Station owners effortlessly manage orders, track water and empty gallon inventory, and monitor debts—while customers order fresh water with doorstep delivery and digital payments.
+              eRefill connects water refilling stations, customers, and delivery riders seamlessly. Station owners effortlessly manage orders, track Slim & Round 5-gallon inventory, and monitor debts—while customers enjoy doorstep delivery and cashless payments.
             </p>
 
             {/* CTA Buttons */}
@@ -87,7 +87,7 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
                 <div className="flex flex-col text-left">
                   <span className="leading-tight">Download eRefill APK</span>
                   <span className="text-[11px] font-normal text-white/80">
-                    Latest {EREFILL_CONFIG.version} • {EREFILL_CONFIG.fileSize}
+                    Official Android Build • Free Download
                   </span>
                 </div>
               </motion.a>
@@ -110,7 +110,7 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
               <span className="text-slate-300">•</span>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Version: <strong className="text-navy-800 font-bold">{EREFILL_CONFIG.version}</strong></span>
+                <span className="text-navy-800 font-bold">Official Package</span>
               </div>
               <span className="text-slate-300">•</span>
               <div className="flex items-center gap-1.5">

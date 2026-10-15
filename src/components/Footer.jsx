@@ -15,12 +15,12 @@ export default function Footer({ onOpenInstallModal, onDownloadClick }) {
             <BrandLogo size="md" showSubtitle={true} theme="dark" />
             
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Smart Order and Inventory Manager for Water Refilling Stations & Customers. Built for seamless operations and doorstep water ordering.
+              Smart Order and Inventory Manager for Water Refilling Stations, Customers & Fleet Riders. Built for seamless operations, container tracking, and doorstep fulfillment.
             </p>
 
             <div className="flex items-center gap-2 text-slate-400">
               <ShieldCheck className="w-4 h-4 text-brand-400" />
-              <span>Official Release Package • SHA-256 Verified</span>
+              <span>Official Release • SHA-256 Verified Official Build</span>
             </div>
           </div>
 
@@ -40,8 +40,9 @@ export default function Footer({ onOpenInstallModal, onDownloadClick }) {
             <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-4">Ecosystem</h4>
             <ul className="space-y-2.5">
               <li><a href="#roles" className="hover:text-white transition-colors">Station Owner</a></li>
-              <li><a href="#roles" className="hover:text-white transition-colors">Customer Experience</a></li>
-              <li><a href="#screenshots" className="hover:text-white transition-colors">Interactive Previews</a></li>
+              <li><a href="#roles" className="hover:text-white transition-colors">Customer & Household</a></li>
+              <li><a href="#roles" className="hover:text-white transition-colors">Delivery Fleet & Rider</a></li>
+              <li><a href="#screenshots" className="hover:text-white transition-colors">App Previews</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
@@ -71,10 +72,10 @@ export default function Footer({ onOpenInstallModal, onDownloadClick }) {
                 </button>
               </li>
               <li className="pt-2 text-slate-400">
-                <span>Version: <strong className="text-white">{EREFILL_CONFIG.version}</strong></span>
+                <span>Release: <strong className="text-white">{EREFILL_CONFIG.releaseDate}</strong></span>
               </li>
               <li className="text-slate-400">
-                <span>Size: <strong className="text-white">{EREFILL_CONFIG.fileSize}</strong></span>
+                <span>License: <strong className="text-white">Free Download</strong></span>
               </li>
             </ul>
           </div>
