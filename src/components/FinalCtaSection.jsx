@@ -22,7 +22,7 @@ export default function FinalCtaSection({ onDownloadClick }) {
         </h2>
 
         <p className="text-base sm:text-lg text-white/85 leading-relaxed max-w-2xl mx-auto mb-10">
-          Join station owners, households, and delivery riders across the region. Track gallon inventory, dispatch orders, or request doorstep water refills with total peace of mind.
+          Join station owners and households across the region. Track gallon inventory, manage customer orders, and request doorstep water refills with total peace of mind.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

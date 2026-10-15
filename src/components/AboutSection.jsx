@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Store, Users, Truck, Check, ArrowRight } from 'lucide-react';
+import { Store, Users, Check } from 'lucide-react';
 
 export default function AboutSection({ onDownloadClick }) {
   const audiences = [
@@ -9,12 +9,12 @@ export default function AboutSection({ onDownloadClick }) {
       role: "Operations & Assets",
       icon: Store,
       badge: "Station Oversight",
-      description: "Replace lost paper notebooks with automated order queues, track every Slim and Round 5-gallon container, monitor customer debt (utang), and manage delivery dispatches with live financial metrics.",
+      description: "Replace lost paper notebooks with automated order queues, track every Slim and Round 5-gallon container, monitor customer debt (utang), and check daily sales reports with ease.",
       highlights: [
-        "Order dispensing & live queue", 
-        "Slim & Round 5-gallon tracking", 
-        "Customer credit/utang ledger",
-        "Automated daily sales reports"
+        "Live order queue & walk-in recording", 
+        "Slim & Round 5-gallon container tracking", 
+        "Customer debt / utang digital ledger",
+        "Automated daily sales & volume summaries"
       ]
     },
     {
@@ -22,25 +22,12 @@ export default function AboutSection({ onDownloadClick }) {
       role: "Doorstep Ordering",
       icon: Users,
       badge: "Fast Ordering",
-      description: "Order fresh purified, alkaline, or mineral water in seconds. Track your delivery on the map in real time, view transparent pricing, and pay via PayMongo GCash, Maya, or Cash on Delivery.",
+      description: "Order fresh purified, alkaline, or mineral water in seconds. Track your delivery progress in real time, view transparent pricing, and pay via GCash, Maya, or Cash on Delivery.",
       highlights: [
-        "Select purified, alkaline, or mineral", 
-        "Live doorstep delivery tracking", 
-        "GCash, Maya & COD payments",
-        "Routine scheduled refill plans"
-      ]
-    },
-    {
-      title: "Delivery Fleet & Riders",
-      role: "Logistics & Route",
-      icon: Truck,
-      badge: "Route & Dispatch",
-      description: "Equip delivery drivers with sequential drop-off queues, turn-by-turn map navigation, offline delivery logging, and empty 5-gallon jug return reconciliation.",
-      highlights: [
-        "Sequential stop navigation",
-        "Empty container return logs",
-        "Offline drop-off sync queue",
-        "Direct customer chat & calls"
+        "Select purified, alkaline, or mineral water", 
+        "Live doorstep delivery progress updates", 
+        "GCash, Maya & Cash on Delivery payments",
+        "Direct in-app messaging with your station"
       ]
     }
   ];
@@ -58,12 +45,12 @@ export default function AboutSection({ onDownloadClick }) {
             What is eRefill?
           </h2>
           <p className="text-base sm:text-lg text-slate-muted leading-relaxed">
-            eRefill is a purpose-built mobile application engineered specifically for the water refilling industry. It bridges station owners, customers, and delivery riders into a synchronized platform—eliminating misplaced jugs, forgotten refills, and uncollected debts.
+            eRefill is a purpose-built mobile application engineered specifically for the water refilling industry. It connects station owners and customers into a unified system—eliminating misplaced jugs, forgotten refills, and uncollected debts.
           </p>
         </div>
 
-        {/* 3 Audience Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        {/* 2 Audience Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {audiences.map((aud, index) => {
             const Icon = aud.icon;
             return (

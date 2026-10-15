@@ -1,19 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Database, Smartphone, Users, ShieldAlert, Sparkles, Droplets } from 'lucide-react';
+import { ClipboardList, Users, Droplets, CreditCard } from 'lucide-react';
 
 export default function LiveStatsBar() {
   const stats = [
     {
-      icon: Database,
-      value: "SQLite Offline",
-      label: "Zero deadzones during deliveries",
-      accent: "text-emerald-600 bg-emerald-50 border-emerald-200"
-    },
-    {
-      icon: Users,
-      value: "3 Dedicated Roles",
-      label: "Station Owner, Customer & Rider flows",
+      icon: ClipboardList,
+      value: "Live Order Queue",
+      label: "Organize walk-in, phone & app refills",
       accent: "text-brand bg-brand-50 border-brand-200"
     },
     {
@@ -23,10 +17,16 @@ export default function LiveStatsBar() {
       accent: "text-cyan-600 bg-cyan-50 border-cyan-200"
     },
     {
-      icon: Smartphone,
-      value: "Android 8.0+",
-      label: "Fast & lightweight on all phones",
+      icon: Users,
+      value: "Owner & Customer",
+      label: "Dedicated interfaces for both",
       accent: "text-indigo-600 bg-indigo-50 border-indigo-200"
+    },
+    {
+      icon: CreditCard,
+      value: "GCash, Maya & COD",
+      label: "Cashless payments & Utang ledger",
+      accent: "text-emerald-600 bg-emerald-50 border-emerald-200"
     }
   ];
 
@@ -62,4 +62,3 @@ export default function LiveStatsBar() {
     </div>
   );
 }
-

@@ -15,7 +15,7 @@ export default function Footer({ onOpenInstallModal, onDownloadClick }) {
             <BrandLogo size="md" showSubtitle={true} theme="dark" />
             
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Smart Order and Inventory Manager for Water Refilling Stations, Customers & Fleet Riders. Built for seamless operations, container tracking, and doorstep fulfillment.
+              Smart Order and Inventory Manager for Water Refilling Stations & Customers. Built for seamless operations, container tracking, and doorstep fulfillment.
             </p>
 
             <div className="flex items-center gap-2 text-slate-400">
@@ -41,7 +41,6 @@ export default function Footer({ onOpenInstallModal, onDownloadClick }) {
             <ul className="space-y-2.5">
               <li><a href="#roles" className="hover:text-white transition-colors">Station Owner</a></li>
               <li><a href="#roles" className="hover:text-white transition-colors">Customer & Household</a></li>
-              <li><a href="#roles" className="hover:text-white transition-colors">Delivery Fleet & Rider</a></li>
               <li><a href="#screenshots" className="hover:text-white transition-colors">App Previews</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
             </ul>

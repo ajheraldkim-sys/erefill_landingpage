@@ -68,7 +68,7 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
 
             {/* Supporting Description */}
             <p className="text-base sm:text-lg text-slate-muted leading-relaxed max-w-2xl mb-8">
-              eRefill connects water refilling stations, customers, and delivery riders seamlessly. Station owners effortlessly manage orders, track Slim & Round 5-gallon inventory, and monitor debts—while customers enjoy doorstep delivery and cashless payments.
+              eRefill connects water refilling stations and customers seamlessly. Station owners effortlessly manage order queues, track Slim & Round 5-gallon inventory, and monitor debts—while customers enjoy doorstep delivery and cashless payments.
             </p>
 
             {/* CTA Buttons */}
@@ -158,19 +158,19 @@ export default function Hero({ onDownloadClick, onOpenInstallModal }) {
               </div>
             </motion.div>
 
-            {/* Floating Glassmorphic Stat Chip: Offline SQLite Sync (Bottom Right) */}
+            {/* Floating Glassmorphic Stat Chip: Customer Debt / Utang Tracker (Bottom Right) */}
             <motion.div
               animate={{ y: [4, -4, 4] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="hidden sm:flex absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg rounded-2xl p-3 items-center gap-3 z-20"
             >
               <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                <Activity className="w-5 h-5 animate-pulse" />
+                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <div className="text-[10px] uppercase font-bold text-slate-muted tracking-wider">Offline Sync</div>
-                <div className="text-xs font-extrabold text-emerald-700">SQLite Active</div>
-                <div className="text-[10px] font-medium text-slate-muted">Zero deadzones</div>
+                <div className="text-[10px] uppercase font-bold text-slate-muted tracking-wider">Customer Utang</div>
+                <div className="text-xs font-extrabold text-navy-800">Digital Credit Ledger</div>
+                <div className="text-[10px] font-medium text-emerald-600">Zero paper notes</div>
               </div>
             </motion.div>
 
