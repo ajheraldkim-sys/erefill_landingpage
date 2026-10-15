@@ -1,1 +1,1 @@
-*.apk filter=lfs diff=lfs merge=lfs -text
+# APKs tracked as regular Git binaries for direct deployment
