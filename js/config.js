@@ -10,7 +10,7 @@ const EREFILL_CONFIG = {
   version: "v1.0.0",
   buildNumber: "1",
   fileSize: "76.8 MB",
-  rawFileSizeBytes: 80566242,
+  rawFileSizeBytes: 80582626,
   releaseDate: "October 16, 2026",
   minAndroid: "Android 8.0 (Oreo) or higher",
   targetPlatform: "Android (ARM64 & ARMv7)",
@@ -19,7 +19,7 @@ const EREFILL_CONFIG = {
   downloadUrl: "downloads/eRefill.apk",
   directPath: "/downloads/eRefill.apk",
   checksum: "SHA-256 Verified Official Build",
-  sha256: "af075e553a2eefc4ecf6254132bf08b06c538cfad1f3cd7e59e71c11562396d3",
+  sha256: "1bdb103da59c9389611a2761812a833c55c33244a72a2282a338266189f73da0",
   supportEmail: "support@erefill.app",
   installSteps: [
     {
