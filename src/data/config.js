@@ -6,9 +6,6 @@
 export const EREFILL_CONFIG = {
   appName: "eRefill",
   tagline: "A Smart Order and Inventory Manager for Water Refilling Stations & Customers",
-  version: "v1.0.0",
-  fileSize: "76.8 MB",
-  rawFileSizeBytes: 80582626,
   releaseDate: "October 16, 2026",
   minAndroid: "Android 8.0 (Oreo) or higher",
   targetPlatform: "Android (ARM64 & ARMv7)",
@@ -17,7 +14,7 @@ export const EREFILL_CONFIG = {
   downloadUrl: "/downloads/eRefill.apk",
   fileName: "eRefill.apk",
   checksum: "SHA-256 Verified Official Build",
-  sha256: "1bdb103da59c9389611a2761812a833c55c33244a72a2282a338266189f73da0",
+  sha256: "c9d11ac23ca9ab23e1b2be7bff1fa825b66c85662e4f95e9b6e06c127d677122",
   supportEmail: "support@erefill.app",
 };
 

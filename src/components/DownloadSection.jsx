@@ -31,11 +31,11 @@ export default function DownloadSection({ onDownloadClick, onOpenInstallModal, o
   };
 
   const specs = [
-    { label: "File Size", value: EREFILL_CONFIG.fileSize, icon: HardDrive },
     { label: "Release Date", value: EREFILL_CONFIG.releaseDate, icon: Calendar },
     { label: "Compatibility", value: EREFILL_CONFIG.minAndroid, icon: Smartphone },
     { label: "Platform", value: "Android (ARM64 & ARMv7)", icon: Smartphone },
     { label: "Format", value: "APK Package", icon: HardDrive },
+    { label: "License", value: "Free Download", icon: ShieldCheck },
     { label: "Package ID", value: EREFILL_CONFIG.packageId, icon: Layers },
   ];
 

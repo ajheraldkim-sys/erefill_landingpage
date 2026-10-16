@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/downloads/erefill.apk",
+      "destination": "/downloads/eRefill.apk"
+    }
+  ]
+}
